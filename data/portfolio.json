@@ -1,0 +1,88 @@
+{
+  "name": "Baptiste Pissembon",
+  "headerTaglineOne": "Bonjour 👋",
+  "headerTaglineTwo": "Je suis Baptiste Pissembon",
+  "headerTaglineThree": "développeur web passionné",
+  "headerTaglineFour": "basé en France.",
+  "showCursor": false,
+  "showBlog": false,
+  "darkMode": true,
+  "showResume": true,
+  "socials": [
+    {
+      "id": "1",
+      "title": "Github",
+      "link": "https://github.com/baptistepissembon"
+    },
+    {
+      "id": "2",
+      "title": "LinkedIn",
+      "link": "https://www.linkedin.com/in/baptiste-pissembon/"
+    },
+    {
+      "id": "3",
+      "title": "Email",
+      "link": "mailto:baptiste.pissembon@example.com"
+    }
+  ],
+  "projects": [
+    {
+      "id": "1",
+      "title": "Kasa",
+      "description": "Application de location immobilière avec React",
+      "imageSrc": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      "url": "https://github.com/baptistepissembon/kasa"
+    },
+    {
+      "id": "2",
+      "title": "Mon Vieux Grimoire",
+      "description": "API backend de notation de livres",
+      "imageSrc": "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      "url": "https://github.com/baptistepissembon/mon-vieux-grimoire"
+    }
+  ],
+  "services": [
+    {
+      "id": "1",
+      "title": "Développement Frontend",
+      "description": "Création d'interfaces utilisateur modernes et responsives avec React, HTML5, CSS3 et JavaScript."
+    },
+    {
+      "id": "2",
+      "title": "Développement Backend",
+      "description": "Conception d'APIs robustes et sécurisées avec Node.js, Express et bases de données."
+    },
+    {
+      "id": "3",
+      "title": "Intégration Web",
+      "description": "Transformation de maquettes en sites web fonctionnels, optimisés pour tous les appareils."
+    },
+    {
+      "id": "4",
+      "title": "Optimisation & SEO",
+      "description": "Amélioration des performances et du référencement naturel pour une meilleure visibilité."
+    }
+  ],
+  "aboutpara": "Développeur web passionné, je me spécialise dans la création d'applications web modernes et performantes. Formé chez OpenClassrooms, j'ai acquis une solide expertise en développement frontend avec React et en développement backend avec Node.js. Mon approche combine créativité et rigueur technique pour livrer des solutions web de qualité, accessibles et optimisées.",
+  "resume": {
+    "tagline": "👋 Développeur web frontend & backend",
+    "description": "Spécialisé en React et Node.js, je crée des applications web modernes, performantes et accessibles. Passionné par les nouvelles technologies et l'expérience utilisateur.",
+    "experiences": [
+      {
+        "id": "1",
+        "dates": "2024 - Présent",
+        "type": "Formation",
+        "position": "Développeur Web - OpenClassrooms",
+        "bullets": "Développement d'applications React, Création d'APIs REST, Optimisation SEO et accessibilité"
+      }
+    ],
+    "education": {
+      "universityName": "OpenClassrooms",
+      "universityDate": "2024",
+      "universityPara": "Formation intensive en développement web couvrant les technologies frontend (React, JavaScript, HTML5, CSS3) et backend (Node.js, Express, MongoDB). Apprentissage des bonnes pratiques, de l'accessibilité web et de l'optimisation des performances."
+    },
+    "languages": ["JavaScript", "HTML5", "CSS3", "Node.js", "SQL"],
+    "frameworks": ["React", "Express", "Sass", "Tailwind CSS"],
+    "others": ["Git", "MongoDB", "Figma", "Lighthouse"]
+  }
+}

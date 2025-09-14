@@ -1,0 +1,154 @@
+{
+  "skills": [
+    {
+      "name": "HTML5",
+      "category": "Frontend",
+      "level": 3,
+      "description": "Sémantique, accessibilité, SEO"
+    },
+    {
+      "name": "CSS3",
+      "category": "Frontend",
+      "level": 3,
+      "description": "Flexbox, Grid, animations, responsive design"
+    },
+    {
+      "name": "JavaScript",
+      "category": "Frontend",
+      "level": 3,
+      "description": "ES6+, DOM, événements, programmation asynchrone"
+    },
+    {
+      "name": "React",
+      "category": "Frontend",
+      "level": 3,
+      "description": "Hooks, composants, state management, React Router"
+    },
+    {
+      "name": "Sass/SCSS",
+      "category": "Frontend",
+      "level": 2,
+      "description": "Variables, mixins, nesting, architecture modulaire"
+    },
+    {
+      "name": "Tailwind CSS",
+      "category": "Frontend",
+      "level": 2,
+      "description": "Utility-first, responsive design, customisation"
+    },
+    {
+      "name": "Node.js",
+      "category": "Backend",
+      "level": 2,
+      "description": "Serveur, modules, npm, programmation asynchrone"
+    },
+    {
+      "name": "Express",
+      "category": "Backend",
+      "level": 2,
+      "description": "API REST, middleware, routing, authentification"
+    },
+    {
+      "name": "MongoDB",
+      "category": "Backend",
+      "level": 2,
+      "description": "NoSQL, Mongoose, requêtes, indexation"
+    },
+    {
+      "name": "JWT",
+      "category": "Backend",
+      "level": 2,
+      "description": "Authentification, sécurité, tokens"
+    },
+    {
+      "name": "Git",
+      "category": "Outils",
+      "level": 3,
+      "description": "Versioning, branches, merge, collaboration"
+    },
+    {
+      "name": "GitHub",
+      "category": "Outils",
+      "level": 3,
+      "description": "Repositories, pull requests, GitHub Pages"
+    },
+    {
+      "name": "Vercel",
+      "category": "Outils",
+      "level": 2,
+      "description": "Déploiement, CI/CD, domaines personnalisés"
+    },
+    {
+      "name": "Vite",
+      "category": "Outils",
+      "level": 2,
+      "description": "Build tool, développement rapide, optimisation"
+    },
+    {
+      "name": "Figma",
+      "category": "Design",
+      "level": 1,
+      "description": "Maquettes, prototypage, design system"
+    },
+    {
+      "name": "Lighthouse",
+      "category": "Outils",
+      "level": 2,
+      "description": "Audit performance, SEO, accessibilité"
+    },
+    {
+      "name": "API REST",
+      "category": "Backend",
+      "level": 2,
+      "description": "Architecture, CRUD, documentation, tests"
+    },
+    {
+      "name": "Responsive Design",
+      "category": "Frontend",
+      "level": 3,
+      "description": "Mobile-first, breakpoints, grilles flexibles"
+    }
+  ],
+  "categories": [
+    {
+      "name": "Frontend",
+      "description": "Technologies côté client",
+      "color": "#3b82f6"
+    },
+    {
+      "name": "Backend",
+      "description": "Technologies côté serveur",
+      "color": "#10b981"
+    },
+    {
+      "name": "Outils",
+      "description": "Outils de développement",
+      "color": "#8b5cf6"
+    },
+    {
+      "name": "Design",
+      "description": "Design et UX/UI",
+      "color": "#f59e0b"
+    }
+  ],
+  "levels": [
+    {
+      "value": 1,
+      "label": "Notions",
+      "description": "Connaissances de base, en apprentissage",
+      "stars": "★☆☆"
+    },
+    {
+      "value": 2,
+      "label": "Opérationnel",
+      "description": "Capable de travailler efficacement",
+      "stars": "★★☆"
+    },
+    {
+      "value": 3,
+      "label": "Solide",
+      "description": "Maîtrise avancée, autonome",
+      "stars": "★★★"
+    }
+  ]
+}
