@@ -19,9 +19,9 @@ const SkillCard = ({ skill, category }) => {
   }
 
   return (
-    <div className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-sm border border-gray-100 dark:border-slate-700 hover:shadow-md transition-shadow">
-      <div className="flex items-start justify-between mb-3">
-        <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+    <div className="bg-surface p-6 rounded-xl border border-surface-hover shadow-elev hover:shadow-lg transition-smooth focus-ring group">
+      <div className="flex items-start justify-between mb-4">
+        <h3 className="font-epilogue font-semibold text-lg text-text group-hover:text-primary transition-smooth">
           {skill.name}
         </h3>
         <div className="text-right">
@@ -37,14 +37,12 @@ const SkillCard = ({ skill, category }) => {
           >
             {getStars(skill.level)}
           </div>
-          <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+          <div className="text-xs text-muted mt-1">
             {getLevelLabel(skill.level)}
           </div>
         </div>
       </div>
-      <p className="text-gray-600 dark:text-gray-300 text-sm">
-        {skill.description}
-      </p>
+      <p className="text-muted text-sm leading-relaxed">{skill.description}</p>
     </div>
   )
 }

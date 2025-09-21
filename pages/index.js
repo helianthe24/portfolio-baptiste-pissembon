@@ -120,46 +120,98 @@ export default function Home() {
           handleWorkScroll={handleWorkScroll}
           handleAboutScroll={handleAboutScroll}
         />
-        <main id="main-content" className="laptop:mt-20 mt-10">
-          <div className="mt-5">
-            <h1
-              ref={textOne}
-              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-4/5 mob:w-full laptop:w-4/5"
-            >
-              {data.headerTaglineOne}
-            </h1>
-            <div
-              ref={textTwo}
-              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5"
-            >
-              {data.headerTaglineTwo}
-            </div>
-            <div
-              ref={textThree}
-              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5"
-            >
-              {data.headerTaglineThree}
-            </div>
-            <div
-              ref={textFour}
-              className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl p-1 tablet:p-2 text-bold w-full laptop:w-4/5"
-            >
-              {data.headerTaglineFour}
-            </div>
-          </div>
+        <main id="main-content" className="laptop:mt-20 mt-10 px-4 laptop:px-0">
+          {/* Hero Section */}
+          <section className="py-24 md:py-32 text-center relative overflow-hidden">
+            {/* Hero Background Effect */}
+            <div className="absolute inset-0 -z-10">
+              {/* Enhanced Mesh Gradient Background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/15 via-primary/5 to-blue-500/15 dark:from-primary/25 dark:via-primary/10 dark:to-blue-400/25"></div>
 
-          <Socials className="mt-2 laptop:mt-5" />
+              {/* Secondary gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-tl from-transparent via-purple-500/10 to-indigo-500/15 dark:via-purple-400/15 dark:to-indigo-400/20"></div>
+
+              {/* Enhanced Floating Elements */}
+              <div className="absolute top-1/4 left-1/4 w-40 h-40 bg-primary/20 rounded-full blur-2xl animate-pulse"></div>
+              <div className="absolute top-3/4 right-1/4 w-32 h-32 bg-blue-500/20 rounded-full blur-xl animate-pulse delay-1000"></div>
+              <div className="absolute top-1/2 right-1/3 w-24 h-24 bg-indigo-500/15 rounded-full blur-lg animate-pulse delay-500"></div>
+              <div className="absolute top-1/3 right-1/5 w-20 h-20 bg-purple-500/15 rounded-full blur-lg animate-pulse delay-700"></div>
+
+              {/* Enhanced Grid Pattern */}
+              <div
+                className="absolute inset-0 opacity-[0.08] dark:opacity-[0.12]"
+                style={{
+                  backgroundImage: `radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)`,
+                  backgroundSize: '32px 32px',
+                }}
+              ></div>
+
+              {/* Mesh overlay pattern */}
+              <div
+                className="absolute inset-0 opacity-[0.06] dark:opacity-[0.1]"
+                style={{
+                  backgroundImage: `linear-gradient(90deg, transparent 24px, currentColor 25px, currentColor 26px, transparent 27px, transparent 100%), linear-gradient(transparent 24px, currentColor 25px, currentColor 26px, transparent 27px, transparent 100%)`,
+                  backgroundSize: '50px 50px',
+                }}
+              ></div>
+
+              {/* Smooth transition fade-out at bottom */}
+              <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-bg via-bg/80 to-transparent"></div>
+            </div>
+
+            <div className="max-w-4xl mx-auto relative z-10">
+              <h1
+                ref={textOne}
+                className="font-epilogue font-normal text-hero text-text leading-tight mb-6"
+              >
+                Bonjour 👋 Je suis{' '}
+                <span className="font-bold">Baptiste Pissembon</span>,
+                développeur web.
+              </h1>
+
+              {/* 
+                Variantes de tagline - choisissez celle qui vous plaît :
+                
+                Option 1 (actuelle) : "Je conçois des applications web modernes et accessibles."
+                Option 2 : "Je développe des expériences web performantes et intuitives."
+                Option 3 : "Passionné par la création d'interfaces web élégantes et fonctionnelles."
+              */}
+              <p
+                ref={textTwo}
+                className="font-inter text-xl md:text-2xl text-muted leading-relaxed mb-8 max-w-3xl mx-auto"
+              >
+                Je conçois des applications web modernes et accessibles.
+              </p>
+
+              <Socials className="mb-8" />
+
+              {/* CTA Button */}
+              <div className="flex justify-center">
+                <button
+                  onClick={() =>
+                    window.open('mailto:baptiste.pissembon@example.com')
+                  }
+                  className="bg-primary hover:bg-primary-600 text-white px-6 py-3 rounded-lg focus-ring transition-smooth font-medium shadow-sm"
+                >
+                  Me contacter
+                </button>
+              </div>
+            </div>
+          </section>
 
           <section
-            className="mt-10 laptop:mt-30 p-2 laptop:p-0"
+            className="py-16 md:py-24"
             ref={workRef}
             aria-labelledby="projects-heading"
           >
-            <h2 id="projects-heading" className="text-2xl text-bold">
+            <h2
+              id="projects-heading"
+              className="font-epilogue font-semibold text-section text-text mb-8"
+            >
               Projets
             </h2>
 
-            <div className="mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 tablet:grid-cols-2 gap-6">
               {projectsData.projects
                 .filter((project) => project.featured)
                 .map((project) => (
@@ -174,40 +226,42 @@ export default function Home() {
             </div>
           </section>
 
-          <section
-            className="mt-10 laptop:mt-30 p-2 laptop:p-0"
-            aria-labelledby="skills-heading"
-          >
-            <h2 id="skills-heading" className="tablet:m-10 text-2xl text-bold">
+          <section className="py-16 md:py-24" aria-labelledby="skills-heading">
+            <h2
+              id="skills-heading"
+              className="font-epilogue font-semibold text-section text-text mb-8"
+            >
               Compétences
             </h2>
 
-            {skillsData.categories.map((category) => {
-              const categorySkills = skillsData.skills.filter(
-                (skill) => skill.category === category.name
-              )
-              if (categorySkills.length === 0) return null
+            <div className="space-y-12">
+              {skillsData.categories.map((category) => {
+                const categorySkills = skillsData.skills.filter(
+                  (skill) => skill.category === category.name
+                )
+                if (categorySkills.length === 0) return null
 
-              return (
-                <div key={category.name} className="mt-8 tablet:m-10">
-                  <h3 className="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-200">
-                    {category.name}
-                    <span className="text-sm font-normal text-gray-500 dark:text-gray-400 ml-2">
+                return (
+                  <div key={category.name}>
+                    <h3 className="font-epilogue font-medium text-xl text-text mb-2">
+                      {category.name}
+                    </h3>
+                    <p className="text-muted text-sm mb-6">
                       {category.description}
-                    </span>
-                  </h3>
-                  <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-4">
-                    {categorySkills.map((skill) => (
-                      <SkillCard
-                        key={skill.name}
-                        skill={skill}
-                        category={category}
-                      />
-                    ))}
+                    </p>
+                    <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-4">
+                      {categorySkills.map((skill) => (
+                        <SkillCard
+                          key={skill.name}
+                          skill={skill}
+                          category={category}
+                        />
+                      ))}
+                    </div>
                   </div>
-                </div>
-              )
-            })}
+                )
+              })}
+            </div>
           </section>
           {/* This button should not go into production */}
           {process.env.NODE_ENV === 'development' && (
@@ -218,14 +272,17 @@ export default function Home() {
             </div>
           )}
           <section
-            className="mt-10 laptop:mt-40 p-2 laptop:p-0"
+            className="py-16 md:py-24"
             ref={aboutRef}
             aria-labelledby="about-heading"
           >
-            <h2 id="about-heading" className="tablet:m-10 text-2xl text-bold">
+            <h2
+              id="about-heading"
+              className="font-epilogue font-semibold text-section text-text mb-8"
+            >
               À propos
             </h2>
-            <p className="tablet:m-10 mt-2 text-xl laptop:text-3xl w-full laptop:w-3/5">
+            <p className="text-lg laptop:text-xl text-text leading-relaxed w-full laptop:w-3/5">
               {data.aboutpara}
             </p>
           </section>

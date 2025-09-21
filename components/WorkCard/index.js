@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { useRouter } from 'next/router'
+import { useTheme } from 'next-themes'
 
 const WorkCard = ({
   img,
@@ -11,6 +12,23 @@ const WorkCard = ({
   isDetailPage = false,
 }) => {
   const router = useRouter()
+  const { theme } = useTheme()
+
+  // Fonction pour obtenir l'image selon le thème
+  const getImageSrc = () => {
+    if (!img) return ''
+
+    // Si l'image contient déjà _dm, la retourner telle quelle
+    if (img.includes('_dm')) return img
+
+    // Sinon, adapter selon le thème
+    if (theme === 'dark') {
+      // Remplacer l'extension par _dm + extension
+      return img.replace(/(\.[^.]+)$/, '_dm$1')
+    }
+
+    return img
+  }
 
   const handleClick = () => {
     if (isDetailPage && onClick) {
@@ -27,27 +45,30 @@ const WorkCard = ({
 
   return (
     <motion.div
-      className="overflow-hidden rounded-lg bg-white dark:bg-slate-800 shadow-lg cursor-pointer"
+      className="overflow-hidden rounded-xl bg-surface border border-surface-hover shadow-elev cursor-pointer transition-smooth focus-ring group"
       onClick={handleClick}
-      whileHover={{ scale: 1.02, y: -4 }}
+      whileHover={{ y: -4 }}
       whileTap={{ scale: 0.98 }}
       transition={{ duration: 0.2, ease: 'easeOut' }}
+      tabIndex={0}
+      role="button"
+      aria-label={`Voir le projet ${name}`}
     >
-      {/* Image en haut */}
-      <div className="relative overflow-hidden h-48 laptop:h-64 group">
+      {/* Image container with fixed 16:9 aspect ratio */}
+      <div className="relative overflow-hidden aspect-video bg-bg-soft">
         <img
           alt={name}
           className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-          src={img}
+          src={getImageSrc()}
           onError={(e) => {
             e.target.style.display = 'none'
             e.target.nextSibling.style.display = 'flex'
           }}
         />
-        <div className="hidden w-full h-full items-center justify-center text-white bg-gray-600">
+        <div className="hidden w-full h-full items-center justify-center text-muted bg-bg-soft">
           <div className="text-center">
             <svg
-              className="w-12 h-12 mx-auto mb-2 text-white opacity-75"
+              className="w-12 h-12 mx-auto mb-2 text-muted opacity-60"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -66,9 +87,9 @@ const WorkCard = ({
         {/* Indicateur de clic pour les pages de détail */}
         {!isDetailPage && (
           <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div className="bg-black/20 backdrop-blur-sm rounded-full p-2">
+            <div className="bg-surface/80 backdrop-blur-sm rounded-full p-2 shadow-elev">
               <svg
-                className="w-5 h-5 text-white"
+                className="w-4 h-4 text-primary"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -86,11 +107,14 @@ const WorkCard = ({
       </div>
 
       {/* Contenu en dessous de l'image */}
-      <div className="p-4 laptop:p-6">
-        <h3 className="text-xl laptop:text-2xl font-bold text-slate-900 dark:text-white mb-2">
+      <div className="p-6">
+        <h3 className="font-epilogue font-semibold text-xl text-text mb-3 group-hover:text-primary transition-smooth">
           {name}
         </h3>
-        <p className="text-slate-600 dark:text-slate-300 text-sm laptop:text-base leading-relaxed">
+        <p
+          className="text-muted text-base leading-relaxed"
+          style={{ maxWidth: '80ch' }}
+        >
           {description}
         </p>
       </div>
