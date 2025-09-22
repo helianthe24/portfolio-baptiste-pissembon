@@ -169,7 +169,7 @@ export default function Projects() {
             Mes Projets
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
-            Découvrez les projets sur lesquels j'ai travaillé
+            Découvrez les projets sur lesquels j&apos;ai travaillé
           </p>
 
           {/* Filtres par tags */}
