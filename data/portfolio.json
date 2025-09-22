@@ -12,17 +12,17 @@
     {
       "id": "1",
       "title": "Github",
-      "link": "https://github.com/baptistepissembon"
+      "link": "https://github.com/helianthe24"
     },
     {
       "id": "2",
       "title": "LinkedIn",
-      "link": "https://www.linkedin.com/in/baptiste-pissembon/"
+      "link": "https://www.linkedin.com/in/baptiste-pissembon-449389386/"
     },
     {
       "id": "3",
       "title": "Email",
-      "link": "mailto:baptiste.pissembon@example.com"
+      "link": "mailto:bpissembon@gmail.com"
     }
   ],
   "projects": [
@@ -70,7 +70,7 @@
     "experiences": [
       {
         "id": "1",
-        "dates": "2024 - Présent",
+        "dates": "2025 - Présent",
         "type": "Formation",
         "position": "Développeur Web - OpenClassrooms",
         "bullets": "Développement d'applications React, Création d'APIs REST, Optimisation SEO et accessibilité"
@@ -78,7 +78,7 @@
     ],
     "education": {
       "universityName": "OpenClassrooms",
-      "universityDate": "2024",
+      "universityDate": "2025",
       "universityPara": "Formation intensive en développement web couvrant les technologies frontend (React, JavaScript, HTML5, CSS3) et backend (Node.js, Express, MongoDB). Apprentissage des bonnes pratiques, de l'accessibilité web et de l'optimisation des performances."
     },
     "languages": ["JavaScript", "HTML5", "CSS3", "Node.js", "SQL"],

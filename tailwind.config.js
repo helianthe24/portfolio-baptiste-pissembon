@@ -15,13 +15,14 @@ module.exports = {
     extend: {
       colors: {
         bg: 'var(--bg)',
-        'bg-soft': 'var(--bg-soft)',
         surface: 'var(--surface)',
-        'surface-hover': 'var(--surface-hover)',
         text: 'var(--text)',
         muted: 'var(--muted)',
-        primary: 'var(--primary)',
-        'primary-600': 'var(--primary-600)',
+        primary: {
+          DEFAULT: 'var(--primary)',
+          600: 'var(--primary-600)',
+        },
+        grid: 'var(--grid)',
       },
       boxShadow: {
         elev: 'var(--shadow-elev)',

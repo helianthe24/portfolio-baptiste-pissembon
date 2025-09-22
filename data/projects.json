@@ -5,36 +5,35 @@
       "title": "Kasa",
       "role": "Développeur Frontend",
       "date": "2024",
-      "tags": ["React", "JavaScript", "CSS", "Responsive", "SPA"],
-      "stack": ["React", "React Router", "Sass", "JavaScript ES6", "Vite"],
-      "resume": "Application web de location immobilière développée avec React. Interface moderne et responsive permettant aux utilisateurs de consulter des annonces de logements avec un système de navigation fluide.",
+      "tags": ["React", "React Router", "Sass", "SPA", "Responsive"],
+      "stack": ["React", "React Router DOM", "Sass", "JavaScript ES6", "Vite"],
+      "resume": "Intégration d'une maquette Figma pour Kasa, une startup fictive de location immobilière. Projet pédagogique OpenClassrooms axé sur l'apprentissage de React, du routing SPA et de la création de composants réutilisables.",
       "problems": [
-        "Gestion de la navigation entre les pages sans rechargement",
-        "Création d'un carrousel d'images responsive et accessible",
-        "Implémentation d'un système de collapse/expand pour les détails",
-        "Gestion des erreurs 404 pour les annonces inexistantes"
+        "Compréhension initiale de la circulation des props entre composants React",
+        "Structuration propre de l'architecture des composants (Header, Layout, Footer)",
+        "Bug du composant Collapse qui coupait le texte lors de l'animation",
+        "Création d'un carrousel tactile personnalisé avec navigation par flèches",
+        "Gestion des erreurs 404 et création d'une page dédiée"
       ],
       "solutions": [
-        "Utilisation de React Router pour une navigation SPA fluide",
-        "Développement d'un composant carrousel custom avec gestion tactile",
-        "Création de composants réutilisables avec état local pour les interactions",
-        "Mise en place de redirections automatiques et pages d'erreur personnalisées"
+        "Apprentissage progressif du flux de données React et maîtrise des props",
+        "Refactorisation de l'architecture en regroupant Header, Layout et Footer dans un dossier dédié",
+        "Manipulation du scrollHeight dynamiquement avec useRef pour corriger l'animation du Collapse",
+        "Développement d'un carrousel custom avec useState et gestion des onClick sur les flèches",
+        "Implémentation de React Router pour gérer les routes 404 avec une page d'erreur personnalisée"
       ],
       "results": [
-        "Application 100% responsive sur tous les appareils",
-        "Navigation fluide sans rechargement de page",
-        "Interface utilisateur intuitive et accessible",
-        "Code modulaire et réutilisable avec composants React"
+        "Maîtrise des concepts fondamentaux de React (props, useState, useRef)",
+        "Architecture de composants claire et réutilisable (Collapse.jsx, Slideshow.jsx, Tag.jsx, Layout.jsx)",
+        "Application SPA fonctionnelle avec navigation fluide",
+        "Composants interactifs robustes (carrousel tactile, système de collapse)",
+        "Gestion complète des erreurs et des cas limites"
       ],
       "links": {
         "demo": "https://kasa-demo.vercel.app",
-        "repo": "https://github.com/baptistepissembon/kasa"
+        "repo": "https://github.com/helianthe24/kasa-vite-react"
       },
-      "images": [
-        "/images/projects/kasa/cover.jpg",
-        "/images/projects/kasa/detail-1.jpg",
-        "/images/projects/kasa/detail-2.jpg"
-      ],
+      "images": ["/images/projects/kasa/cover.jpg"],
       "featured": true
     },
     {
@@ -42,7 +41,7 @@
       "title": "Mon Vieux Grimoire",
       "role": "Développeur Backend",
       "date": "2024",
-      "tags": ["Node.js", "Express", "MongoDB", "API", "Backend"],
+      "tags": ["Node.js", "Express", "MongoDB", "JWT", "API REST"],
       "stack": [
         "Node.js",
         "Express",
@@ -52,37 +51,36 @@
         "Sharp",
         "JWT"
       ],
-      "resume": "API backend pour un site de notation de livres. Système complet de gestion des utilisateurs, des livres et des notations avec authentification sécurisée et optimisation des images.",
+      "resume": "API REST complète pour une plateforme de notation de livres. Développement backend avec authentification JWT, gestion d'images automatisée et système de notation intégré. Projet axé sur la sécurité et les bonnes pratiques backend.",
       "problems": [
-        "Authentification sécurisée des utilisateurs",
-        "Gestion et optimisation des images uploadées",
-        "Calcul automatique des moyennes de notation",
-        "Protection contre les attaques et validation des données",
-        "Optimisation des performances de la base de données"
+        "Mise en place d'une authentification sécurisée avec JWT sans faille",
+        "Structuration propre des modèles MongoDB avec Mongoose",
+        "Gestion de l'upload d'images avec compression automatique",
+        "Implémentation d'un système de notation (une seule note par utilisateur)",
+        "Calcul automatique et mise à jour des moyennes de notation",
+        "Organisation des routes CRUD pour livres et utilisateurs"
       ],
       "solutions": [
-        "Implémentation de JWT pour l'authentification avec middleware de vérification",
-        "Utilisation de Multer et Sharp pour le traitement et la compression d'images",
-        "Création d'un système de calcul automatique des moyennes avec hooks Mongoose",
-        "Validation des données avec des schémas stricts et sanitisation des entrées",
-        "Indexation MongoDB et requêtes optimisées pour les performances"
+        "Implémentation JWT avec middleware de vérification sur les routes protégées",
+        "Création de schémas Mongoose structurés avec validation des données",
+        "Configuration Multer + Sharp pour upload et compression automatique des images",
+        "Développement d'un système de notation avec vérification d'unicité par utilisateur",
+        "Mise en place de hooks Mongoose pour recalculer automatiquement les moyennes",
+        "Structuration claire des routes avec séparation controllers/routes/models"
       ],
       "results": [
-        "API REST complète et sécurisée",
-        "Système d'authentification robuste avec JWT",
-        "Optimisation automatique des images (compression, redimensionnement)",
-        "Base de données performante avec calculs automatiques",
-        "Documentation API complète et tests fonctionnels"
+        "API REST fonctionnelle avec toutes les routes CRUD opérationnelles",
+        "Authentification sécurisée testée et validée",
+        "Gestion d'images optimisée (compression, redimensionnement automatique)",
+        "Système de notation robuste avec calcul automatique des moyennes",
+        "Code organisé et versionné sur GitHub avec commits structurés",
+        "Tous les endpoints testés et validés avec Postman"
       ],
       "links": {
         "demo": "https://mon-vieux-grimoire-api.herokuapp.com",
-        "repo": "https://github.com/baptistepissembon/mon-vieux-grimoire"
+        "repo": "https://github.com/helianthe24/mon-vieux-grimoire-backend"
       },
-      "images": [
-        "/images/projects/mon-vieux-grimoire/cover.jpg",
-        "/images/projects/mon-vieux-grimoire/api-schema.jpg",
-        "/images/projects/mon-vieux-grimoire/postman.jpg"
-      ],
+      "images": ["/images/projects/mon-vieux-grimoire/cover.jpg"],
       "featured": true
     }
   ]

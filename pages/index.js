@@ -8,7 +8,8 @@ import { useIsomorphicLayoutEffect } from '../utils'
 import { stagger } from '../animations'
 import Footer from '../components/Footer'
 import Head from 'next/head'
-import Button from '../components/Button'
+import Button from '../components/ui/Button'
+import Hero from '../components/Hero'
 import Link from 'next/link'
 
 // Local Data
@@ -42,13 +43,7 @@ export default function Home() {
     })
   }
 
-  useIsomorphicLayoutEffect(() => {
-    stagger(
-      [textOne.current, textTwo.current, textThree.current, textFour.current],
-      { y: 40, x: -10, transform: 'scale(0.95) skew(10deg)' },
-      { y: 0, x: 0, transform: 'scale(1)' }
-    )
-  }, [])
+  // Animations supprimées car le nouveau Hero n'en a pas besoin
 
   return (
     <div className="relative">
@@ -121,83 +116,7 @@ export default function Home() {
           handleAboutScroll={handleAboutScroll}
         />
         <main id="main-content" className="laptop:mt-20 mt-10 px-4 laptop:px-0">
-          {/* Hero Section */}
-          <section className="py-24 md:py-32 text-center relative overflow-hidden">
-            {/* Hero Background Effect */}
-            <div className="absolute inset-0 -z-10">
-              {/* Enhanced Mesh Gradient Background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/15 via-primary/5 to-blue-500/15 dark:from-primary/25 dark:via-primary/10 dark:to-blue-400/25"></div>
-
-              {/* Secondary gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-tl from-transparent via-purple-500/10 to-indigo-500/15 dark:via-purple-400/15 dark:to-indigo-400/20"></div>
-
-              {/* Enhanced Floating Elements */}
-              <div className="absolute top-1/4 left-1/4 w-40 h-40 bg-primary/20 rounded-full blur-2xl animate-pulse"></div>
-              <div className="absolute top-3/4 right-1/4 w-32 h-32 bg-blue-500/20 rounded-full blur-xl animate-pulse delay-1000"></div>
-              <div className="absolute top-1/2 right-1/3 w-24 h-24 bg-indigo-500/15 rounded-full blur-lg animate-pulse delay-500"></div>
-              <div className="absolute top-1/3 right-1/5 w-20 h-20 bg-purple-500/15 rounded-full blur-lg animate-pulse delay-700"></div>
-
-              {/* Enhanced Grid Pattern */}
-              <div
-                className="absolute inset-0 opacity-[0.08] dark:opacity-[0.12]"
-                style={{
-                  backgroundImage: `radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)`,
-                  backgroundSize: '32px 32px',
-                }}
-              ></div>
-
-              {/* Mesh overlay pattern */}
-              <div
-                className="absolute inset-0 opacity-[0.06] dark:opacity-[0.1]"
-                style={{
-                  backgroundImage: `linear-gradient(90deg, transparent 24px, currentColor 25px, currentColor 26px, transparent 27px, transparent 100%), linear-gradient(transparent 24px, currentColor 25px, currentColor 26px, transparent 27px, transparent 100%)`,
-                  backgroundSize: '50px 50px',
-                }}
-              ></div>
-
-              {/* Smooth transition fade-out at bottom */}
-              <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-bg via-bg/80 to-transparent"></div>
-            </div>
-
-            <div className="max-w-4xl mx-auto relative z-10">
-              <h1
-                ref={textOne}
-                className="font-epilogue font-normal text-hero text-text leading-tight mb-6"
-              >
-                Bonjour 👋 Je suis{' '}
-                <span className="font-bold">Baptiste Pissembon</span>,
-                développeur web.
-              </h1>
-
-              {/* 
-                Variantes de tagline - choisissez celle qui vous plaît :
-                
-                Option 1 (actuelle) : "Je conçois des applications web modernes et accessibles."
-                Option 2 : "Je développe des expériences web performantes et intuitives."
-                Option 3 : "Passionné par la création d'interfaces web élégantes et fonctionnelles."
-              */}
-              <p
-                ref={textTwo}
-                className="font-inter text-xl md:text-2xl text-muted leading-relaxed mb-8 max-w-3xl mx-auto"
-              >
-                Je conçois des applications web modernes et accessibles.
-              </p>
-
-              <Socials className="mb-8" />
-
-              {/* CTA Button */}
-              <div className="flex justify-center">
-                <button
-                  onClick={() =>
-                    window.open('mailto:baptiste.pissembon@example.com')
-                  }
-                  className="bg-primary hover:bg-primary-600 text-white px-6 py-3 rounded-lg focus-ring transition-smooth font-medium shadow-sm"
-                >
-                  Me contacter
-                </button>
-              </div>
-            </div>
-          </section>
+          <Hero />
 
           <section
             className="py-16 md:py-24"
@@ -263,16 +182,9 @@ export default function Home() {
               })}
             </div>
           </section>
-          {/* This button should not go into production */}
-          {process.env.NODE_ENV === 'development' && (
-            <div className="fixed bottom-5 right-5">
-              <Link href="/edit">
-                <Button type="primary">Edit Data</Button>
-              </Link>
-            </div>
-          )}
           <section
-            className="py-16 md:py-24"
+            id="about"
+            className="py-16 md:py-24 text-center"
             ref={aboutRef}
             aria-labelledby="about-heading"
           >
@@ -282,7 +194,7 @@ export default function Home() {
             >
               À propos
             </h2>
-            <p className="text-lg laptop:text-xl text-text leading-relaxed w-full laptop:w-3/5">
+            <p className="text-lg laptop:text-xl text-text leading-relaxed max-w-3xl mx-auto">
               {data.aboutpara}
             </p>
           </section>

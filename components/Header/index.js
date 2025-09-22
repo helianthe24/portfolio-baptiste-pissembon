@@ -74,7 +74,9 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                   <Button onClick={() => router.push('/projects')}>
                     Tous les projets
                   </Button>
-                  <Button onClick={handleAboutScroll}>À propos</Button>
+                  <Button onClick={() => router.push('/#about')}>
+                    À propos
+                  </Button>
                   {showBlog && (
                     <Button onClick={() => router.push('/blog')}>Blog</Button>
                   )}
@@ -83,9 +85,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                   )}
 
                   <Button
-                    onClick={() =>
-                      window.open('mailto:baptiste.pissembon@example.com')
-                    }
+                    onClick={() => window.open('mailto:bpissembon@gmail.com')}
                   >
                     Contact
                   </Button>
@@ -108,7 +108,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                   )}
 
                   <Button
-                    onClick={() => window.open('mailto:hello@chetanverma.com')}
+                    onClick={() => window.open('mailto:bpissembon@gmail.com')}
                   >
                     Contact
                   </Button>
@@ -135,7 +135,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
             <Button onClick={() => router.push('/projects')}>
               Tous les projets
             </Button>
-            <Button onClick={handleAboutScroll}>À propos</Button>
+            <Button onClick={() => router.push('/#about')}>À propos</Button>
             {showBlog && (
               <Button onClick={() => router.push('/blog')}>Blog</Button>
             )}
@@ -148,11 +148,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
               </Button>
             )}
 
-            <Button
-              onClick={() =>
-                window.open('mailto:baptiste.pissembon@example.com')
-              }
-            >
+            <Button onClick={() => window.open('mailto:bpissembon@gmail.com')}>
               Contact
             </Button>
             {mounted && theme && data.darkMode && (
@@ -181,11 +177,7 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
               </Button>
             )}
 
-            <Button
-              onClick={() =>
-                window.open('mailto:baptiste.pissembon@example.com')
-              }
-            >
+            <Button onClick={() => window.open('mailto:bpissembon@gmail.com')}>
               Contact
             </Button>
 

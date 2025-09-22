@@ -23,13 +23,6 @@ const Resume = () => {
   }, [])
   return (
     <>
-      {process.env.NODE_ENV === 'development' && (
-        <div className="fixed bottom-6 right-6">
-          <Button onClick={() => router.push('/edit')} type={'primary'}>
-            Edit Resume
-          </Button>
-        </div>
-      )}
       <div className="container mx-auto mb-10">
         <Header isBlog />
         {mount && (
