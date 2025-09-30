@@ -29,8 +29,16 @@
         "Composants interactifs robustes (carrousel tactile, système de collapse)",
         "Gestion complète des erreurs et des cas limites"
       ],
+      "improvements": [
+        "Refactorisation avancée des composants : certains composants comme Logement.jsx contiennent encore trop de logique et pourraient être découpés pour plus de lisibilité",
+        "Ajout de tests unitaires : le projet ne comporte pas encore de tests automatisés. Ajouter des tests avec Jest ou React Testing Library permettrait de sécuriser les fonctionnalités (ex : carrousel, collapse)",
+        "Utilisation de TypeScript : migrer le projet vers TypeScript améliorerait la robustesse du code, notamment pour éviter les erreurs de props",
+        "Optimisation des performances : certaines animations (ex : le Collapse) pourraient être optimisées avec des transitions CSS plus fluides ou React.memo pour éviter les re-render inutiles",
+        "Amélioration de l'accessibilité : les composants comme le carrousel ou les menus déroulants pourraient être enrichis d'attributs ARIA pour une meilleure prise en charge par les lecteurs d'écran",
+        "Ajout d'un système de gestion des données : actuellement, les données sont statiques. Intégrer une API REST ou une base de données simulée (ex: JSON Server) rendrait l'application plus proche d'un cas réel"
+      ],
       "links": {
-        "demo": "https://kasa-demo.vercel.app",
+        "demo": "https://kasa-vite-react.vercel.app",
         "repo": "https://github.com/helianthe24/kasa-vite-react"
       },
       "images": ["/images/projects/kasa/cover.jpg"],
@@ -76,8 +84,16 @@
         "Code organisé et versionné sur GitHub avec commits structurés",
         "Tous les endpoints testés et validés avec Postman"
       ],
+      "improvements": [
+        "Sécurisation renforcée des mots de passe : actuellement, les mots de passe sont hashés avec Bcrypt, ce qui est déjà une bonne pratique. À l'avenir, on pourrait intégrer une politique de mot de passe plus stricte (longueur minimale, complexité) ou ajouter une double authentification",
+        "Validation des entrées plus robuste : la validation des champs se fait principalement côté backend avec des vérifications basiques. Utiliser une bibliothèque comme Joi permettrait une validation plus stricte et complète",
+        "Ajout de tests automatisés : implémenter des tests unitaires et d'intégration avec Jest ou Mocha pour sécuriser les routes et la logique métier",
+        "Limitation du taux de requêtes : ajouter un middleware de rate limiting pour prévenir les attaques par déni de service",
+        "Gestion fine des rôles utilisateurs : le projet repose sur une authentification classique. On pourrait imaginer une séparation plus fine des permissions (admin, lecteur·ice, auteur·ice...) pour étendre les fonctionnalités futures",
+        "Documentation automatique de l’API : aujourd’hui, la documentation est implicite. Intégrer Swagger ou Postman (collection + doc publique) permettrait de faciliter l’intégration par d’autres devs ou clients"
+      ],
       "links": {
-        "demo": "https://mon-vieux-grimoire-api.herokuapp.com",
+        "demo": "https://mon-vieux-grimoire-backend-y5n5.onrender.com",
         "repo": "https://github.com/helianthe24/mon-vieux-grimoire-backend"
       },
       "images": ["/images/projects/mon-vieux-grimoire/cover.jpg"],

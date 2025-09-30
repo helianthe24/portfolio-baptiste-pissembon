@@ -276,6 +276,27 @@ const ProjectDetail = ({ project }) => {
                   ))}
                 </ul>
               </section>
+
+              {/* Perspectives d'amélioration */}
+              {project.improvements && project.improvements.length > 0 && (
+                <section>
+                  <h2 className="text-2xl font-bold mb-4">
+                    Perspectives d&apos;amélioration
+                  </h2>
+                  <ul className="space-y-3">
+                    {project.improvements.map((improvement, index) => (
+                      <li key={index} className="flex items-start">
+                        <span className="flex-shrink-0 w-6 h-6 bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-400 rounded-full flex items-center justify-center text-sm font-medium mr-3 mt-0.5">
+                          →
+                        </span>
+                        <span className="text-gray-700 dark:text-gray-300">
+                          {improvement}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              )}
             </div>
 
             {/* Sidebar */}
