@@ -23,7 +23,8 @@ export default function Parcours() {
         <meta
           property="og:url"
           content={`${
-            process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
+            process.env.NEXT_PUBLIC_SITE_URL ||
+            'https://portfolio-baptiste-pissembon-v96j.vercel.app'
           }/parcours`}
         />
       </Head>
@@ -39,9 +40,14 @@ export default function Parcours() {
       <div className="gradient-circle"></div>
       <div className="gradient-circle-bottom"></div>
 
-      <div className="container mx-auto mb-10">
-        <Header />
-        <main id="main-content" className="laptop:mt-20 mt-10 px-6">
+      <header>
+        <div className="container mx-auto">
+          <Header />
+        </div>
+      </header>
+
+      <main id="main-content" className="laptop:mt-20 mt-10">
+        <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             <section className="py-16 md:py-24">
               <h1 className="font-epilogue font-semibold text-4xl laptop:text-5xl text-[var(--text)] mb-12 text-center">
@@ -139,9 +145,14 @@ export default function Parcours() {
               </div>
             </section>
           </div>
-        </main>
-        <Footer />
-      </div>
+        </div>
+      </main>
+
+      <footer>
+        <div className="container mx-auto">
+          <Footer />
+        </div>
+      </footer>
     </div>
   )
 }

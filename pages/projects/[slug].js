@@ -4,6 +4,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
+import Button from '../../components/ui/Button'
 import projectsData from '../../data/projects.json'
 import data from '../../data/portfolio.json'
 
@@ -48,10 +49,14 @@ const ProjectDetail = ({ project }) => {
       <div className="gradient-circle"></div>
       <div className="gradient-circle-bottom"></div>
 
-      <div className="container mx-auto mb-10">
-        <Header />
+      <header>
+        <div className="container mx-auto">
+          <Header />
+        </div>
+      </header>
 
-        <main className="mt-10 laptop:mt-20 p-2 laptop:p-0">
+      <main id="main-content" className="mt-10 laptop:mt-20">
+        <div className="container mx-auto p-2 laptop:p-0">
           {/* Breadcrumb */}
           <nav
             className="mb-8 text-sm text-gray-600 dark:text-gray-400"
@@ -93,19 +98,19 @@ const ProjectDetail = ({ project }) => {
 
               <div className="mt-4 laptop:mt-0 flex gap-4">
                 {project.links.demo && (
-                  <button
+                  <Button
                     onClick={() => window.open(project.links.demo)}
-                    className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                    variant="neutral"
                   >
                     Voir la démo
-                  </button>
+                  </Button>
                 )}
-                <button
+                <Button
                   onClick={() => window.open(project.links.repo)}
-                  className="px-6 py-3 border border-gray-300 dark:border-slate-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-slate-700 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+                  variant="outline"
                 >
                   Voir le code
-                </button>
+                </Button>
               </div>
             </div>
 
@@ -335,19 +340,21 @@ const ProjectDetail = ({ project }) => {
 
               <div className="space-y-3">
                 {project.links.demo && (
-                  <button
+                  <Button
                     onClick={() => window.open(project.links.demo)}
-                    className="w-full px-4 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                    variant="neutral"
+                    className="w-full"
                   >
                     Voir la démo
-                  </button>
+                  </Button>
                 )}
-                <button
+                <Button
                   onClick={() => window.open(project.links.repo)}
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-slate-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-slate-700 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+                  variant="outline"
+                  className="w-full"
                 >
                   Voir le code source
-                </button>
+                </Button>
               </div>
             </div>
           </div>
@@ -363,10 +370,14 @@ const ProjectDetail = ({ project }) => {
               </Link>
             </div>
           </section>
-        </main>
+        </div>
+      </main>
 
-        <Footer />
-      </div>
+      <footer>
+        <div className="container mx-auto">
+          <Footer />
+        </div>
+      </footer>
     </div>
   )
 }

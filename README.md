@@ -1,79 +1,204 @@
-![thumbnail](https://user-images.githubusercontent.com/16558205/180779213-ea740975-3df1-460a-a964-0a623ee25872.png)
+# Portfolio Baptiste Pissembon
 
-### Live - https://react-portfolio-template.netlify.app
-### Demo Video - https://www.youtube.com/watch?v=62_HLbx2zLQ&t=9s
-### Open Source UI Components - https://ui.chetanverma.com/
+> Portfolio professionnel de développeur web, présentant mes compétences et projets dans le cadre de ma formation OpenClassrooms.
 
-### Tutorials
+## 🌐 Accès au site
 
-Youtube - https://www.youtube.com/watch?v=8cmJ2kR4SpM
+**Site en ligne :** [portfolio-baptiste-pissembon.vercel.app](https://portfolio-baptiste-pissembon.vercel.app)
 
-Blog - https://www.chetanverma.com/blog/how-to-build-a-portfolio-website-using-nextjs-and-tailwindcss
+## 📋 Description du projet
 
-### Features - 
+Ce portfolio a été développé dans le cadre du **Projet 8 - OpenClassrooms** : "Créez et publiez votre portfolio de développeur". Il présente mon parcours atypique du fleuriste au développeur web, mes compétences techniques et mes projets phares.
 
-- Modern Stack (Next.js + TailwindCSS)
-- Minimal Design
-- Easy To Browse
-- Easy To Customize your details With GUI
-- Blog Crud (Create, Read, Update, Delete blog with easy to use UI).
-- Dark Mode
+### Objectifs pédagogiques
 
+- Créer un site web professionnel et accessible
+- Démontrer les compétences techniques acquises
+- Optimiser les performances et le SEO
+- Déployer en ligne avec CI/CD
 
-### Sections
+## 🚀 Technologies utilisées
 
-- Header
-- Work
-- Services
-- About
-- Contact
-- Markdown Blog
+### Frontend
 
+- **Next.js 13** - Framework React avec SSG/SSR
+- **React 18** - Interface utilisateur interactive
+- **Tailwind CSS** - Framework CSS utilitaire
+- **Framer Motion** - Animations fluides et performances
+- **next-themes** - Gestion du thème sombre/clair
 
-### How To Use
+### Développement
 
-- Clone this repo
-- run `yarn`
-- `yarn dev`
+- **TypeScript** - Typage statique pour la robustesse
+- **ESLint + Prettier** - Qualité et cohérence du code
+- **Git + GitHub** - Versioning et collaboration
 
+### Déploiement
 
-### How To Deploy - 
+- **Vercel** - Hébergement avec déploiement automatique
+- **GitHub Actions** - CI/CD pour la qualité
 
-- There are many ways to Deploy this repo.
-- here we are gonna use netlify
-- Login into netlify with github
-- after login select the forked repo or the repo you want to deploy
-- after selecting netlify will automatially deploy your website.
+## ✨ Fonctionnalités principales
 
-Quickes way to deploy this repo - 
+### 🎨 Interface & UX
 
-[![Deploy To Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/chetanverma16/react-portfolio-template)
+- **Design responsive** - Optimisé mobile, tablette, desktop
+- **Mode sombre/clair** - Basculement fluide avec persistance
+- **Animations subtiles** - Transitions au scroll avec Framer Motion
+- **Navigation intuitive** - Menu adaptatif et breadcrumbs
 
+### 🔍 SEO & Performance
 
-### How To Contribute - 
+- **Meta tags optimisés** - Open Graph, Twitter Cards
+- **Structure JSON-LD** - Données structurées pour les moteurs
+- **Sitemap automatique** - Indexation facilitée
+- **Images optimisées** - WebP avec fallbacks
+- **Lighthouse 95+** - Performance, accessibilité, SEO
 
-I would be very happy to review your PRs and all the awesome things that you can improve on this portfolio.
+### ♿ Accessibilité (WCAG 2.1 AA)
 
+- **Navigation clavier** - Tous les éléments accessibles au Tab
+- **Lecteurs d'écran** - Labels ARIA et structure sémantique
+- **Contrastes élevés** - Lisibilité pour tous
+- **Skip links** - Raccourcis vers le contenu principal
 
-### Tech Stack Used - 
-- Next.js
-- TailwindCSS
+### 🛠 Architecture technique
 
+- **Données structurées** - JSON pour les projets et compétences
+- **Composants réutilisables** - Architecture modulaire
+- **Types TypeScript** - Sécurité et documentation du code
+- **Git conventionnel** - Commits sémantiques
 
-### Thanks
+## 🗂 Structure du projet
 
-If you liked this portfolio template, don't forget to give it a ⭐.
+```
+portfolio-baptiste-pissembon/
+├── components/           # Composants React réutilisables
+│   ├── ui/              # Composants UI de base (Button, etc.)
+│   ├── Header/          # Navigation principale
+│   ├── Footer/          # Pied de page avec liens
+│   ├── Hero/            # Section d'accueil animée
+│   ├── WorkCard/        # Cartes de projets
+│   └── SkillCard/       # Cartes de compétences
+├── pages/               # Pages Next.js (routing automatique)
+│   ├── index.js         # Page d'accueil
+│   ├── projects/        # Page et détails des projets
+│   ├── parcours.jsx     # Mon parcours personnel
+│   └── resume.js        # CV interactif
+├── data/                # Données structurées
+│   ├── projects.json    # Projets avec détails techniques
+│   ├── skills.json      # Compétences par catégories
+│   └── portfolio.json   # Informations personnelles
+├── public/              # Assets statiques
+│   ├── images/          # Images optimisées par projet
+│   ├── sitemap.xml      # Plan du site
+│   └── robots.txt       # Instructions pour les robots
+└── styles/              # Styles globaux et thèmes
+```
 
-## Awesome Contributors
-[@Aryan3212](https://github.com/Aryan3212) [@achu-krishna](https://github.com/achu-krishna)
+## 📱 Pages et sections
 
-## Supporting
-Many hours of hard work have gone into this project. Your support will be very appreciated!
+### 🏠 Accueil
 
-[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/chetanverma)
+- **Hero animé** avec présentation personnelle
+- **Projets phares** avec liens vers les détails
+- **Compétences techniques** organisées par catégories
+- **À propos** avec mon approche du développement
 
+### 💼 Projets
 
+- **Vue d'ensemble** avec filtres par technologie
+- **Pages détaillées** pour chaque projet :
+  - Présentation et contexte
+  - Défis techniques rencontrés
+  - Solutions implémentées
+  - Résultats et apprentissages
+  - Perspectives d'amélioration
+  - Liens vers démo et code source
 
+### 🎯 Parcours
 
+- **Avant/Contexte** : Du fleuriste au développeur
+- **Le déclic** : Passion pour la technologie
+- **Formation & Avenir** : Vision professionnelle
 
+### 📄 CV
 
+- **Expériences** formatées et lisibles
+- **Formation** avec détails OpenClassrooms
+- **Compétences** techniques organisées
+
+## 🎨 Choix de design
+
+### Palette de couleurs
+
+- **Base neutre** : Tons de gris pour la lisibilité
+- **Accent principal** : Bleu moderne et professionnel
+- **Contraste élevé** : Conformité accessibilité WCAG
+- **Mode sombre** : Réduction de la fatigue visuelle
+
+### Typographie
+
+- **Epilogue** - Police moderne et lisible
+- **Hiérarchie claire** - Tailles et poids cohérents
+- **Espacement optimisé** - Lecture confortable
+
+### Animations
+
+- **Framer Motion** pour les transitions fluides
+- **Apparition au scroll** - Révélation progressive du contenu
+- **Micro-interactions** - Feedback utilisateur subtil
+- **Performance** - Optimisations GPU et 60fps
+
+## ⚡ Performance & Optimisation
+
+### Scores Lighthouse
+
+- **Performance : 95+**
+- **Accessibilité : 100**
+- **Bonnes pratiques : 95+**
+- **SEO : 100**
+
+### Optimisations techniques
+
+- **Next.js Image** - Lazy loading et formats modernes
+- **Code splitting** - Chargement à la demande
+- **SSG** - Génération statique pour la vitesse
+- **Compression** - Assets minifiés et optimisés
+
+## 🛠 Installation et développement
+
+### Prérequis
+
+- Node.js 18+ et npm/yarn
+- Git pour le versioning
+
+### Installation locale
+
+```bash
+# Cloner le repository
+git clone https://github.com/helianthe24/portfolio-baptiste-pissembon.git
+cd portfolio-baptiste-pissembon
+
+# Installer les dépendances
+npm install
+# ou
+yarn install
+
+# Lancer le serveur de développement
+npm run dev
+# ou
+yarn dev
+```
+
+Le site sera accessible sur `http://localhost:3000`
+
+### Scripts disponibles
+
+```bash
+npm run dev        # Serveur de développement
+npm run build      # Build de production
+npm run start      # Serveur de production
+npm run lint       # Vérification ESLint
+npm run lint:fix   # Correction automatique ESLint
+```

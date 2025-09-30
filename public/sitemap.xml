@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://localhost:3000</loc>
-    <lastmod>2024-01-01</lastmod>
+    <loc>https://portfolio-baptiste-pissembon.vercel.app</loc>
+    <lastmod>2025-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/projects</loc>
-    <lastmod>2024-01-01</lastmod>
+    <loc>https://portfolio-baptiste-pissembon.vercel.app/projects</loc>
+    <lastmod>2025-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/projects/kasa</loc>
-    <lastmod>2024-01-01</lastmod>
+    <loc>https://portfolio-baptiste-pissembon.vercel.app/projects/kasa</loc>
+    <lastmod>2025-09-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/projects/mon-vieux-grimoire</loc>
-    <lastmod>2024-01-01</lastmod>
+    <loc>https://portfolio-baptiste-pissembon.vercel.app/projects/mon-vieux-grimoire</loc>
+    <lastmod>2025-09-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/resume</loc>
-    <lastmod>2024-01-01</lastmod>
+    <loc>https://portfolio-baptiste-pissembon.vercel.app/resume</loc>
+    <lastmod>2025-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>http://localhost:3000/parcours</loc>
-    <lastmod>2024-09-30</lastmod>
+    <loc>https://portfolio-baptiste-pissembon.vercel.app/parcours</loc>
+    <lastmod>2025-09-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>

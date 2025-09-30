@@ -16,8 +16,10 @@ module.exports = {
       colors: {
         bg: 'var(--bg)',
         surface: 'var(--surface)',
+        'surface-hover': 'var(--surface-hover)',
         text: 'var(--text)',
         muted: 'var(--muted)',
+        accent: 'var(--accent)',
         primary: {
           DEFAULT: 'var(--primary)',
           600: 'var(--primary-600)',

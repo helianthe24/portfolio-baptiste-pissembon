@@ -4,6 +4,7 @@ import Footer from '../components/Footer'
 import Head from 'next/head'
 import projectsData from '../data/projects.json'
 import data from '../data/portfolio.json'
+import Button from '../components/ui/Button'
 
 import { motion } from 'framer-motion'
 import { useRouter } from 'next/router'
@@ -20,10 +21,21 @@ const ProjectCard = ({ project }) => {
     action()
   }
 
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault()
+      handleCardClick()
+    }
+  }
+
   return (
     <motion.div
-      className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-gray-100 dark:border-slate-700 overflow-hidden hover:shadow-md transition-shadow cursor-pointer"
+      className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-gray-100 dark:border-slate-700 overflow-hidden hover:shadow-md transition-shadow cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
       onClick={handleCardClick}
+      onKeyDown={handleKeyDown}
+      tabIndex={0}
+      role="button"
+      aria-label={`Voir le projet ${project.title}`}
       whileHover={{ scale: 1.02, y: -4 }}
       whileTap={{ scale: 0.98 }}
       transition={{ duration: 0.2, ease: 'easeOut' }}
@@ -108,23 +120,25 @@ const ProjectCard = ({ project }) => {
 
         <div className="flex gap-3">
           {project.links.demo && (
-            <button
+            <Button
               onClick={(e) =>
                 handleButtonClick(e, () => window.open(project.links.demo))
               }
-              className="px-4 py-2 bg-blue-600 text-white text-sm rounded hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              variant="neutral"
+              className="text-sm"
             >
               Voir la démo
-            </button>
+            </Button>
           )}
-          <button
+          <Button
             onClick={(e) =>
               handleButtonClick(e, () => window.open(project.links.repo))
             }
-            className="px-4 py-2 border border-gray-300 dark:border-slate-600 text-gray-700 dark:text-gray-300 text-sm rounded hover:bg-gray-50 dark:hover:bg-slate-700 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+            variant="outline"
+            className="text-sm"
           >
             Code source
-          </button>
+          </Button>
         </div>
       </div>
     </motion.div>
@@ -161,10 +175,14 @@ export default function Projects() {
       <div className="gradient-circle"></div>
       <div className="gradient-circle-bottom"></div>
 
-      <div className="container mx-auto mb-10">
-        <Header />
+      <header>
+        <div className="container mx-auto">
+          <Header />
+        </div>
+      </header>
 
-        <div className="mt-10 laptop:mt-20 p-2 laptop:p-0">
+      <main id="main-content" className="mt-10 laptop:mt-20">
+        <div className="container mx-auto p-2 laptop:p-0">
           <h1 className="text-4xl laptop:text-6xl font-bold mb-4">
             Mes Projets
           </h1>
@@ -209,9 +227,13 @@ export default function Projects() {
             </div>
           )}
         </div>
+      </main>
 
-        <Footer />
-      </div>
+      <footer>
+        <div className="container mx-auto">
+          <Footer />
+        </div>
+      </footer>
     </div>
   )
 }

@@ -43,10 +43,18 @@ const WorkCard = ({
     }
   }
 
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault()
+      handleClick()
+    }
+  }
+
   return (
     <motion.div
       className="overflow-hidden rounded-xl bg-surface border border-surface-hover shadow-elev cursor-pointer transition-smooth focus-ring group"
       onClick={handleClick}
+      onKeyDown={handleKeyDown}
       whileHover={{ y: -4 }}
       whileTap={{ scale: 0.98 }}
       transition={{ duration: 0.2, ease: 'easeOut' }}

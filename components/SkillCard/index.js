@@ -19,14 +19,21 @@ const SkillCard = ({ skill, category }) => {
   }
 
   return (
-    <div className="bg-surface p-6 rounded-xl border border-surface-hover shadow-elev hover:shadow-lg transition-smooth focus-ring group">
+    <div
+      className="bg-surface p-6 rounded-xl border border-surface-hover shadow-elev hover:shadow-lg transition-smooth focus-ring group"
+      tabIndex={0}
+      role="article"
+      aria-label={`Compétence: ${skill.name}, niveau ${getLevelLabel(
+        skill.level
+      )}`}
+    >
       <div className="flex items-start justify-between mb-4">
         <h3 className="font-epilogue font-semibold text-lg text-text group-hover:text-primary transition-smooth">
           {skill.name}
         </h3>
         <div className="text-right">
           <div
-            className="text-yellow-500 text-lg cursor-help"
+            className="text-accent text-lg cursor-help"
             title={`${getLevelLabel(skill.level)} : ${
               skill.level === 1
                 ? 'Connaissances de base, en apprentissage'
@@ -34,10 +41,11 @@ const SkillCard = ({ skill, category }) => {
                 ? 'Capable de travailler efficacement'
                 : 'Maîtrise avancée, autonome'
             }`}
+            aria-label={`Niveau: ${getLevelLabel(skill.level)}`}
           >
             {getStars(skill.level)}
           </div>
-          <div className="text-xs text-muted mt-1">
+          <div className="text-xs text-muted mt-1" aria-hidden="true">
             {getLevelLabel(skill.level)}
           </div>
         </div>

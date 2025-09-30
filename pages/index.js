@@ -1,16 +1,11 @@
 import { useRef } from 'react'
 import Header from '../components/Header'
-import ServiceCard from '../components/ServiceCard'
 import SkillCard from '../components/SkillCard'
-import Socials from '../components/Socials'
 import WorkCard from '../components/WorkCard'
-import { useIsomorphicLayoutEffect } from '../utils'
-import { stagger } from '../animations'
 import Footer from '../components/Footer'
 import Head from 'next/head'
-import Button from '../components/ui/Button'
 import Hero from '../components/Hero'
-import Link from 'next/link'
+import { motion } from 'framer-motion'
 
 // Local Data
 import data from '../data/portfolio.json'
@@ -110,58 +105,115 @@ export default function Home() {
       <div className="gradient-circle"></div>
       <div className="gradient-circle-bottom"></div>
 
-      <div className="container mx-auto mb-10">
-        <Header
-          handleWorkScroll={handleWorkScroll}
-          handleAboutScroll={handleAboutScroll}
-        />
-        <main id="main-content" className="laptop:mt-20 mt-10 px-4 laptop:px-0">
+      <header>
+        <div className="container mx-auto">
+          <Header
+            handleWorkScroll={handleWorkScroll}
+            handleAboutScroll={handleAboutScroll}
+          />
+        </div>
+      </header>
+
+      <main id="main-content" className="laptop:mt-20 mt-10">
+        <div className="container mx-auto px-4 laptop:px-0">
           <Hero />
 
-          <section
+          <motion.section
             className="py-16 md:py-24"
             ref={workRef}
             aria-labelledby="projects-heading"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            viewport={{ once: true, margin: '-100px' }}
           >
-            <h2
+            <motion.h2
               id="projects-heading"
               className="font-epilogue font-semibold text-section text-text mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              viewport={{ once: true }}
             >
               Projets
-            </h2>
+            </motion.h2>
 
-            <div className="grid grid-cols-1 tablet:grid-cols-2 gap-6">
+            <motion.div
+              className="grid grid-cols-1 tablet:grid-cols-2 gap-6"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
               {projectsData.projects
                 .filter((project) => project.featured)
-                .map((project) => (
-                  <WorkCard
+                .map((project, index) => (
+                  <motion.div
                     key={project.slug}
-                    img={project.images[0]}
-                    name={project.title}
-                    description={project.resume}
-                    slug={project.slug}
-                  />
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{
+                      duration: 0.5,
+                      delay: 0.3 + index * 0.1,
+                      ease: 'easeOut',
+                    }}
+                    viewport={{ once: true }}
+                  >
+                    <WorkCard
+                      img={project.images[0]}
+                      name={project.title}
+                      description={project.resume}
+                      slug={project.slug}
+                    />
+                  </motion.div>
                 ))}
-            </div>
-          </section>
+            </motion.div>
+          </motion.section>
 
-          <section className="py-16 md:py-24" aria-labelledby="skills-heading">
-            <h2
+          <motion.section
+            className="py-16 md:py-24"
+            aria-labelledby="skills-heading"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            viewport={{ once: true, margin: '-100px' }}
+          >
+            <motion.h2
               id="skills-heading"
               className="font-epilogue font-semibold text-section text-text mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              viewport={{ once: true }}
             >
               Compétences
-            </h2>
+            </motion.h2>
 
-            <div className="space-y-12">
-              {skillsData.categories.map((category) => {
+            <motion.div
+              className="space-y-12"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              {skillsData.categories.map((category, categoryIndex) => {
                 const categorySkills = skillsData.skills.filter(
                   (skill) => skill.category === category.name
                 )
                 if (categorySkills.length === 0) return null
 
                 return (
-                  <div key={category.name}>
+                  <motion.div
+                    key={category.name}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{
+                      duration: 0.5,
+                      delay: 0.3 + categoryIndex * 0.1,
+                      ease: 'easeOut',
+                    }}
+                    viewport={{ once: true }}
+                  >
                     <h3 className="font-epilogue font-medium text-xl text-text mb-2">
                       {category.name}
                     </h3>
@@ -169,38 +221,66 @@ export default function Home() {
                       {category.description}
                     </p>
                     <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-4">
-                      {categorySkills.map((skill) => (
-                        <SkillCard
+                      {categorySkills.map((skill, skillIndex) => (
+                        <motion.div
                           key={skill.name}
-                          skill={skill}
-                          category={category}
-                        />
+                          initial={{ opacity: 0, scale: 0.9 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          transition={{
+                            duration: 0.3,
+                            delay:
+                              0.4 + categoryIndex * 0.1 + skillIndex * 0.05,
+                            ease: 'easeOut',
+                          }}
+                          viewport={{ once: true }}
+                        >
+                          <SkillCard skill={skill} category={category} />
+                        </motion.div>
                       ))}
                     </div>
-                  </div>
+                  </motion.div>
                 )
               })}
-            </div>
-          </section>
-          <section
+            </motion.div>
+          </motion.section>
+          <motion.section
             id="about"
             className="py-16 md:py-24 text-center"
             ref={aboutRef}
             aria-labelledby="about-heading"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+            viewport={{ once: true, margin: '-100px' }}
           >
-            <h2
+            <motion.h2
               id="about-heading"
               className="font-epilogue font-semibold text-section text-text mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              viewport={{ once: true }}
             >
               À propos
-            </h2>
-            <p className="text-lg laptop:text-xl text-text leading-relaxed max-w-3xl mx-auto">
+            </motion.h2>
+            <motion.p
+              className="text-lg laptop:text-xl text-text leading-relaxed max-w-3xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
               {data.aboutpara}
-            </p>
-          </section>
-        </main>
-        <Footer />
-      </div>
+            </motion.p>
+          </motion.section>
+        </div>
+      </main>
+
+      <footer>
+        <div className="container mx-auto">
+          <Footer />
+        </div>
+      </footer>
     </div>
   )
 }

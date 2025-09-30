@@ -37,17 +37,29 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                     onClick={() =>
                       setTheme(theme === 'dark' ? 'light' : 'dark')
                     }
+                    aria-label={`Passer au thème ${
+                      theme === 'dark' ? 'clair' : 'sombre'
+                    }`}
+                    title={`Passer au thème ${
+                      theme === 'dark' ? 'clair' : 'sombre'
+                    }`}
                   >
                     <img
                       className="h-6"
                       src={`/images/${
                         theme === 'dark' ? 'moon.svg' : 'sun.svg'
                       }`}
-                    ></img>
+                      alt={`Icône ${
+                        theme === 'dark' ? 'lune' : 'soleil'
+                      } - Changer de thème`}
+                    />
                   </Button>
                 )}
 
-                <Popover.Button>
+                <Popover.Button
+                  aria-label={open ? 'Fermer le menu' : 'Ouvrir le menu'}
+                  title={open ? 'Fermer le menu' : 'Ouvrir le menu'}
+                >
                   <img
                     className="h-5"
                     src={`/images/${
@@ -59,7 +71,8 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                         ? 'cancel.svg'
                         : 'cancel-white.svg'
                     }`}
-                  ></img>
+                    alt={open ? 'Icône fermer' : 'Icône menu'}
+                  />
                 </Popover.Button>
               </div>
             </div>
@@ -156,11 +169,20 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
             {mounted && theme && data.darkMode && (
               <Button
                 onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                aria-label={`Passer au thème ${
+                  theme === 'dark' ? 'clair' : 'sombre'
+                }`}
+                title={`Passer au thème ${
+                  theme === 'dark' ? 'clair' : 'sombre'
+                }`}
               >
                 <img
                   className="h-6"
                   src={`/images/${theme === 'dark' ? 'moon.svg' : 'sun.svg'}`}
-                ></img>
+                  alt={`Icône ${
+                    theme === 'dark' ? 'lune' : 'soleil'
+                  } - Changer de thème`}
+                />
               </Button>
             )}
           </div>
@@ -186,11 +208,20 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
             {mounted && theme && data.darkMode && (
               <Button
                 onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                aria-label={`Passer au thème ${
+                  theme === 'dark' ? 'clair' : 'sombre'
+                }`}
+                title={`Passer au thème ${
+                  theme === 'dark' ? 'clair' : 'sombre'
+                }`}
               >
                 <img
                   className="h-6"
                   src={`/images/${theme === 'dark' ? 'moon.svg' : 'sun.svg'}`}
-                ></img>
+                  alt={`Icône ${
+                    theme === 'dark' ? 'lune' : 'soleil'
+                  } - Changer de thème`}
+                />
               </Button>
             )}
           </div>
