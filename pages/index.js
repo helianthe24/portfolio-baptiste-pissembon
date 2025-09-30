@@ -16,10 +16,6 @@ export default function Home() {
   // Ref
   const workRef = useRef()
   const aboutRef = useRef()
-  const textOne = useRef()
-  const textTwo = useRef()
-  const textThree = useRef()
-  const textFour = useRef()
 
   // Handling Scroll
   const handleWorkScroll = () => {
@@ -56,7 +52,7 @@ export default function Home() {
         <meta property="og:type" content="website" />
         <meta
           property="og:url"
-          content={process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'}
+          content="https://portfolio-baptiste-pissembon-v96j.vercel.app"
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={`${data.name} - Développeur Web`} />
@@ -75,7 +71,7 @@ export default function Home() {
               name: data.name,
               jobTitle: 'Développeur Web',
               description: 'Développeur web spécialisé en React et Node.js',
-              url: process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',
+              url: 'https://portfolio-baptiste-pissembon-v96j.vercel.app',
               sameAs: data.socials.map((social) => social.link),
               knowsAbout: [
                 'React',

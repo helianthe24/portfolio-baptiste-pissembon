@@ -34,9 +34,9 @@ const ProjectDetail = ({ project }) => {
         <meta property="og:type" content="article" />
         <meta
           property="og:image"
-          content={`${
-            process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
-          }${project.images?.[0] || '/images/og-default.jpg'}`}
+          content={`https://portfolio-baptiste-pissembon-v96j.vercel.app${
+            project.images?.[0] || '/images/og-default.jpg'
+          }`}
         />
         <meta name="twitter:card" content="summary_large_image" />
         <meta

@@ -22,10 +22,7 @@ export default function Parcours() {
         <meta property="og:type" content="website" />
         <meta
           property="og:url"
-          content={`${
-            process.env.NEXT_PUBLIC_SITE_URL ||
-            'https://portfolio-baptiste-pissembon-v96j.vercel.app'
-          }/parcours`}
+          content="https://portfolio-baptiste-pissembon-v96j.vercel.app/parcours"
         />
       </Head>
 

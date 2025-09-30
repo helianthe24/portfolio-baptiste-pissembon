@@ -5,7 +5,7 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import ProjectResume from '../components/ProjectResume'
 import Socials from '../components/Socials'
-import Button from '../components/Button'
+import Button from '../components/ui/Button'
 import { useTheme } from 'next-themes'
 // Data
 import { name, showResume } from '../data/portfolio.json'
@@ -22,7 +22,7 @@ const Resume = () => {
     if (!showResume) {
       router.push('/')
     }
-  }, [])
+  }, [router, showResume])
   return (
     <div className="relative">
       <Head>

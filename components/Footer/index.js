@@ -1,7 +1,7 @@
 import React from 'react'
 import Socials from '../Socials'
 import Link from 'next/link'
-import Button from '../Button'
+import Button from '../ui/Button'
 import data from '../../data/portfolio.json'
 
 const Footer = ({}) => {
